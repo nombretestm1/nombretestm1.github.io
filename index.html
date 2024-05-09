@@ -8,27 +8,12 @@
 
 <body>
 <p>Buenos dias</p>
-    <script>
-        // Función para obtener los parámetros del URL
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+   <script>
+        // Obtener la URL completa
+        var urlCompleta = window.location.href;
 
-        // Obtener el valor del parámetro 'dato' del URL
-        var dato = getParameterByName('dato');
-
-        // Imprimir el valor del parámetro en la página
-        if (dato) {
-            document.write('<p>El valor del parámetro "dato" es: ' + dato + '</p>');
-        } else {
-            document.write('<p>No se encontró el parámetro "dato" en el URL.</p>');
-        }
+        // Mostrar la URL completa en la página
+        document.write('<p>La URL completa es: ' + urlCompleta + '</p>');
     </script>
 </body>
 
